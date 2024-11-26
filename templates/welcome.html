@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenido</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe4ec; /* Fondo rosa claro */
+            color: #a14d67; /* Texto rosa oscuro */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .contenedor {
+            background: linear-gradient(145deg, #ffc0cb, #ffd9e0); /* Fondo degradado */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 2em;
+            text-align: center;
+            width: 400px;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #d47c93;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            font-size: 1.5em;
+            color: #874b5c;
+            margin-bottom: 1.5em;
+        }
+
+        a {
+            display: inline-block;
+            background-color: #d47c93;
+            color: white;
+            padding: 0.8em 1.5em;
+            font-size: 1em;
+            text-decoration: none;
+            border-radius: 8px;
+            border: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        a:hover {
+            background-color: #ba5b76;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Bienvenido, {{ username }} Victor</h1>
+        <p>Has iniciado sesión correctamente.</p>
+        <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+    </div>
+</body>
+</html>

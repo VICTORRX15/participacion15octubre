@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar Sesión</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e3fceb; /* Fondo verde claro */
+            color: #2d572c; /* Texto verde oscuro */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .contenedor {
+            background: linear-gradient(145deg, #b3e6c6, #d9f7e3); /* Fondo degradado */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 2em;
+            text-align: center;
+            width: 350px;
+        }
+
+        h1 {
+            color: #1d4b1a;
+            font-size: 2em;
+            margin-bottom: 1em;
+        }
+
+        label {
+            display: block;
+            margin: 1em 0 0.5em 0;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 0.8em;
+            margin-bottom: 1em;
+            border: 2px solid #a6d6b5;
+            border-radius: 8px;
+            outline: none;
+            font-size: 1em;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            border-color: #4ca770;
+            box-shadow: 0 0 5px #4ca770;
+        }
+
+        button {
+            background-color: #4ca770;
+            color: white;
+            padding: 0.8em 1.5em;
+            font-size: 1em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #3d8d62;
+            transform: scale(1.05);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 1em 0;
+        }
+
+        ul li {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+            color: #2d572c;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #1d4b1a;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Iniciar Sesión</h1>
+        <form method="POST">
+            <label for="username">Nombre de usuario:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>
